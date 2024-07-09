@@ -10,7 +10,11 @@ type Button = {
   type: "button" | "submit" | "reset";
   disabled?: boolean;
 };
-
+/**
+ * ------------------------------------------------------------------------
+ * Component Definition
+ * ------------------------------------------------------------------------
+ */
 function Button({
   children,
   variant,

@@ -7,7 +7,11 @@ type Table = {
   className?: string;
   overflowHidden?: boolean;
 };
-
+/**
+ * ------------------------------------------------------------------------
+ * Component Definition
+ * ------------------------------------------------------------------------
+ */
 function Table({ children, className }: Table) {
   return (
     <>
@@ -16,6 +20,8 @@ function Table({ children, className }: Table) {
   );
 }
 
+// Following are the children who functions as a container
+// Data will be managed in the data layer
 export function TableHeader({ children }: Table) {
   return <thead className="table-header">{children}</thead>;
 }

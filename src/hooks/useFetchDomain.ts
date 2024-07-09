@@ -11,7 +11,9 @@ type fetchDomain = {
 /**
  * ------------------------------------------------------------------------
  * Component Definition
+ *
  * Fetches from WHO Is API and returns structured data
+ * Serves as the business logic or data layer of the Container layer in the App.tsx
  * ------------------------------------------------------------------------
  */
 function useFetchDomain({ domain }: fetchDomain) {
@@ -36,7 +38,6 @@ function useFetchDomain({ domain }: fetchDomain) {
           setData({});
           setErrors(data.ErrorMessage.msg);
         } else {
-          // Re-structure how the data will be received in the table
           const {
             domainName,
             registrarName,
@@ -49,6 +50,8 @@ function useFetchDomain({ domain }: fetchDomain) {
             nameServers,
           } = data.WhoisRecord;
 
+          // Re-structure how the data will be received in the table
+          // Data in the table will be formated from here
           const extractedData = {
             domainName,
             registrarName,

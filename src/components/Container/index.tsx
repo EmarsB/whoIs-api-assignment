@@ -7,8 +7,13 @@ type Container = {
   maxWidth?: "xl" | "lg" | "md" | "sm";
   className?: string;
 };
-
+/**
+ * ------------------------------------------------------------------------
+ * Component Definition
+ * ------------------------------------------------------------------------
+ */
 function Container({ children, className, flexed, maxWidth }: Container) {
+  // TODO: Way to dynamically approach re-usability 
   const style = {
     xl: "container--xl",
     lg: "container--lg",

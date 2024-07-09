@@ -70,13 +70,7 @@ function App() {
               </Select.Options>
             </Select>
 
-            <Button
-              color="dark"
-              type="submit"
-              size="md"
-              variant="primary"
-              disabled={!form.domain}
-            >
+            <Button color="dark" type="submit" size="md" variant="primary">
               Submit
             </Button>
           </Container>

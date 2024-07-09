@@ -9,6 +9,12 @@ type Select = {
   id: string;
 };
 
+/**
+ * ------------------------------------------------------------------------
+ * Component Definition
+ * ------------------------------------------------------------------------
+ */
+
 function Select({ children, onChange, name, id }: Select) {
   return (
     <>
@@ -23,6 +29,7 @@ type Options = {
   children: React.ReactNode;
   value: string | number;
 };
+// Compound Component children:
 
 function Options({ children, value }: Options) {
   return (
