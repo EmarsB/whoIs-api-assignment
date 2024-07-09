@@ -3,11 +3,17 @@ import React, { useCallback, useMemo, useState } from "react";
 // Internal Component
 // Utilities
 import { WHO_IS_BASE_URL } from "../utils/constants";
+import { WhoIsResponse } from "./types";
 
 type fetchDomain = {
   domain: string;
 };
-
+type whoIsResponse = {
+  WhoisRecord: WhoIsResponse;
+  ErrorMessage: {
+    msg: string;
+  };
+};
 /**
  * ------------------------------------------------------------------------
  * Component Definition
@@ -32,12 +38,13 @@ function useFetchDomain({ domain }: fetchDomain) {
 
     fetch(APPENDED_END_POINT)
       .then((response) => response.json())
-      .then((data) => {
+      .then((data: whoIsResponse) => {
         if (Object.keys(data).includes("ErrorMessage")) {
           // Will be the basis of validity of error
           setData({});
           setErrors(data.ErrorMessage.msg);
         } else {
+          // Main data response for 200 is WhoisRecord
           const {
             domainName,
             registrarName,
