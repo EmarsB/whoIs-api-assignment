@@ -1,0 +1,10 @@
+.table {
+  &-header {
+    font-weight: bold;
+  }
+  &-cell {
+    min-width: 200px;
+    text-align: left;
+    padding-right: 10px;
+  }
+}
