@@ -8,20 +8,31 @@ type InputField = {
   onChange: ChangeEventHandler<HTMLInputElement>;
   type: "text" | "email" | "number";
   placeHolder: string;
+  errorMessage?: string;
+  error?: boolean;
 };
 
-function index({ onChange, type, id, name, placeHolder }: InputField) {
+function index({
+  onChange,
+  type,
+  id,
+  name,
+  placeHolder,
+  error,
+  errorMessage,
+}: InputField) {
   return (
-    <>
+    <div>
       <input
         placeholder={placeHolder}
         id={id}
         name={name}
         onChange={onChange}
-        className="field__input"
+        className={`field__input ${error ? "error" : ""}`}
         type={type}
       />
-    </>
+      {error && <label className="error-message">{errorMessage}</label>}
+    </div>
   );
 }
 

@@ -1,11 +1,21 @@
+div {
+  flex: 1;
+  position: relative;
+}
 .field__input {
+  width: -webkit-fill-available;
   border-radius: 4px;
   display: flex;
   align-items: center;
   line-height: 24px;
-  width: 100%;
   padding: 12px 16px;
   border: 1px solid gray;
   font-size: 16px;
-  flex: 1;
+}
+.error {
+  border: 1px solid red;
+  &-message {
+    color: red;
+    position: absolute;
+  }
 }

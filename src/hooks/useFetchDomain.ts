@@ -16,7 +16,7 @@ type fetchDomain = {
  */
 function useFetchDomain({ domain }: fetchDomain) {
   const [data, setData] = useState({});
-  const [errors, setErrors] = useState();
+  const [errors, setErrors] = useState("");
   const [loading, setLoading] = useState(false);
 
   const memoizedDomain = useMemo(() => domain, [domain]);
@@ -33,6 +33,7 @@ function useFetchDomain({ domain }: fetchDomain) {
       .then((data) => {
         if (Object.keys(data).includes("ErrorMessage")) {
           // Will be the basis of validity of error
+          setData({});
           setErrors(data.ErrorMessage.msg);
         } else {
           // Re-structure how the data will be received in the table
@@ -58,7 +59,7 @@ function useFetchDomain({ domain }: fetchDomain) {
               registryData.expiresDate
             ).toLocaleDateString("en-CA"),
             estimatedDomainAge,
-            hostNames: nameServers.hostNames,
+            hostNames: nameServers.hostNames.join(","),
             registrantName: registrant.rawText,
             contactEmail,
             technicalContactName: technicalContact.rawText,
@@ -66,6 +67,7 @@ function useFetchDomain({ domain }: fetchDomain) {
           };
 
           setData(extractedData);
+          setErrors("");
         }
       })
       .catch((e) => {

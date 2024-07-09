@@ -5,6 +5,7 @@ import "./index.scss";
 type Table = {
   children: React.ReactNode | JSX.Element;
   className?: string;
+  overflowHidden?: boolean;
 };
 
 function Table({ children, className }: Table) {
@@ -24,7 +25,17 @@ export function TableBody({ children }: Table) {
 export function TableRow({ children, className }: Table) {
   return <tr className={`${className} table-row`}>{children}</tr>;
 }
-export function TableCell({ children, className }: Table) {
-  return <td className={`${className || ""} table-cell`}>{children}</td>;
+export function TableCell({
+  children,
+  className,
+  overflowHidden = false,
+}: Table) {
+  return (
+    <td className={`${className || ""} table-cell`}>
+      <div className={overflowHidden ? "text-overflow-ellipsis" : ""}>
+        {children}
+      </div>
+    </td>
+  );
 }
 export default Table;

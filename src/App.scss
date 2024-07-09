@@ -16,3 +16,9 @@
 section {
   padding: 2rem 1rem;
 }
+.text-overflow-ellipsis {
+  max-width: 205px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

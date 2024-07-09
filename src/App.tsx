@@ -13,6 +13,8 @@ import Table, {
 } from "./components/Table";
 // Libraries
 import useFetchDomain from "./hooks/useFetchDomain";
+// Utilities
+import { table } from "./utils/tableArrays";
 // Styles
 import "./App.scss";
 
@@ -27,46 +29,11 @@ function App() {
     domain: form.domain,
   });
 
-  console.warn({ data });
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     fetchDomain();
   };
 
-  const table = {
-    domain: {
-      headerList: [
-        "Domain Name",
-        "Registrar",
-        "Registration Date",
-        "Expiration Date",
-        "Estimated Domain Age",
-        "Hostnames",
-      ],
-      data: [
-        "domainName",
-        "registrarName",
-        "registrationData",
-        "expirationDate",
-        "estimatedDomainAge",
-        "hostNames",
-      ],
-    },
-    contact: {
-      headerList: [
-        "Registrant Name",
-        "Technical Contact Name",
-        "Administrative Contact Name",
-        "Contact Email",
-      ],
-      data: [
-        "registrantName",
-        "contactEmail",
-        "technicalContactName",
-        "administrativeContactName",
-      ],
-    },
-  };
   return (
     <main>
       <section>
@@ -83,6 +50,8 @@ function App() {
                 });
               }}
               placeHolder="Enter a domain"
+              errorMessage={errors}
+              error={errors !== ""}
             />
 
             <Select
@@ -132,12 +101,16 @@ function App() {
                 <TableRow>
                   {form.type === "domain"
                     ? table["domain"].data.map((key) => (
-                        //@ts-ignore
-                        <TableCell>{data[key]}</TableCell>
+                        <TableCell overflowHidden={key === "hostNames"}>
+                          {/* @ts-ignore */}
+                          {data[key]}
+                        </TableCell>
                       ))
                     : table["contact"].data.map((key) => (
-                        //@ts-ignore
-                        <TableCell>{data[key]}</TableCell>
+                        <TableCell>
+                          {/* @ts-ignore */}
+                          {data[key]}
+                        </TableCell>
                       ))}
                 </TableRow>
               </TableBody>
