@@ -1,30 +1,26 @@
 # TLV300- Home Assignment for Frontend Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository is dedicated as a submission to a frontend application. This exercises showcases a frontend interface which directly interacts with the Whois API.
 
-Currently, two official plugins are available:
+Relatively, the technologies/packages used are the following:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Vite JS](https://vitejs.dev/) - Front end Tooling
+- [React JS](https://react.dev/) - Library
+- [Sass](https://sass-lang.com/) - Styling
+- [Typescript](https://www.typescriptlang.org/)
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- `Node JS` >= v18.19.0
 
-- Configure the top-level `parserOptions` property like this:
+### Running Locally
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+Since we are running statically, we just have to run:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- `npm run dev` will be running at localhost:5000
+
+For inquiries and details:
+
+- [https://www.onlinejobs.ph/jobseekers/info/1014017] - Online Job Ph Profile
+- [https://www.linkedin.com/in/bancud-emarson-959ba2201/] - Linkedin Profile
+- [elbancud@gmail.com] - email
