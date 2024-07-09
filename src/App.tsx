@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.scss'
+// Internal
+// Components
+import Select from "./components/Select";
+import InputField from "./components/InputField";
+// Styles
+import "./App.scss";
+import Button from "./components/Button";
+import Container from "./components/Container";
 
+// Main Component render
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <section>
+        <form>
+          <Container flexed>
+            <InputField
+              id="domain_input"
+              name="domain_input"
+              type="text"
+              onChange={() => {}}
+              placeHolder="Search"
+            />
+            <Select id="type" name="type" onChange={() => {}}>
+              <Select.Options value={1}>Domain Information</Select.Options>
+              <Select.Options value={2}>Contact Information</Select.Options>
+            </Select>
+            <Button
+              color="dark"
+              onClick={() => {}}
+              type="submit"
+              size="md"
+              variant="primary"
+            >
+              Submit
+            </Button>
+          </Container>
+        </form>
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;

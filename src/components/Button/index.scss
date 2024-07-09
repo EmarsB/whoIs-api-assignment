@@ -1,0 +1,39 @@
+$dark-900: #000;
+$dark-800: #131313;
+$light-400: #fff;
+$light-300: #dfdfdf;
+
+.field__button {
+  border-radius: 4px;
+  padding: 12px 16px;
+  border: 1px solid gray;
+  cursor: pointer;
+  font-size: 16px;
+
+  &--primary {
+    background-color: $dark-900;
+    color: #fff;
+    display: inline-block;
+
+    &:hover {
+      background-color: $dark-900;
+    }
+  }
+
+  &--secondary {
+    background-color: #fff;
+    color: #fff;
+    &:hover {
+      background-color: $dark-900;
+    }
+  }
+
+  &--dark {
+    background-color: $dark-900;
+    color: #fff;
+
+    &:hover {
+      background-color: $dark-900;
+    }
+  }
+}
