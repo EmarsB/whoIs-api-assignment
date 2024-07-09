@@ -8,9 +8,18 @@ type Button = {
   size: "sm" | "md" | "lg";
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   type: "button" | "submit" | "reset";
+  disabled?: boolean;
 };
 
-function Button({ children, variant, color, onClick, type, size }: Button) {
+function Button({
+  children,
+  variant,
+  color,
+  onClick,
+  type,
+  size,
+  disabled,
+}: Button) {
   const style = {
     primary: "field__button--primary",
     secondary: "field__button--secondary",
@@ -31,6 +40,7 @@ function Button({ children, variant, color, onClick, type, size }: Button) {
         onClick={onClick}
         type={type}
         className={`field__button ${appendStyling}`}
+        disabled={disabled}
       >
         {children}
       </button>

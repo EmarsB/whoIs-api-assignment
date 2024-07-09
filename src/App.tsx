@@ -19,19 +19,13 @@ function App() {
               name="domain_input"
               type="text"
               onChange={() => {}}
-              placeHolder="Search"
+              placeHolder="Enter a domain"
             />
             <Select id="type" name="type" onChange={() => {}}>
               <Select.Options value={1}>Domain Information</Select.Options>
               <Select.Options value={2}>Contact Information</Select.Options>
             </Select>
-            <Button
-              color="dark"
-              onClick={() => {}}
-              type="submit"
-              size="md"
-              variant="primary"
-            >
+            <Button color="dark" type="submit" size="md" variant="primary">
               Submit
             </Button>
           </Container>
